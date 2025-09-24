@@ -1,0 +1,16 @@
+platform,family,benchmark_id,tool,solver,status,wall_time_s,rmse,linf,n_steps,params_json,peak_mem_mb
+R,HYBRID,hybrid_bounce,deSolve,lsoda,OK,0.031,0.464709758090914,1.05113614083432,2,"{""t_end"":10,""rtol"":0.001,""atol"":1e-05,""e"":0.9,""h0"":10,""v0"":0}",77.92
+R,HYBRID,hybrid_bounce,deSolve,lsoda,OK,0.031,0.464709758090914,1.05113614083432,2,"{""t_end"":10,""rtol"":0.001,""atol"":1e-05,""e"":0.9,""h0"":10,""v0"":0}",76.61
+R,HYBRID,hybrid_bounce,deSolve,lsoda,OK,0.029,0.464709758090914,1.05113614083432,2,"{""t_end"":10,""rtol"":0.001,""atol"":1e-05,""e"":0.9,""h0"":10,""v0"":0}",78.92
+R,HYBRID,hybrid_bounce,deSolve,lsoda,OK,0.033,0.464709758090914,1.05113614083432,2,"{""t_end"":10,""rtol"":0.001,""atol"":1e-05,""e"":0.9,""h0"":10,""v0"":0}",78.67
+R,HYBRID,hybrid_bounce,deSolve,lsoda,OK,0.033,0.464709758090914,1.05113614083432,2,"{""t_end"":10,""rtol"":0.001,""atol"":1e-05,""e"":0.9,""h0"":10,""v0"":0}",78.52
+R,HYBRID,hybrid_bounce,deSolve,lsoda,OK,0.03,0.464709758777126,1.05113613406635,2,"{""t_end"":10,""rtol"":1e-06,""atol"":1e-08,""e"":0.9,""h0"":10,""v0"":0}",77.16
+R,HYBRID,hybrid_bounce,deSolve,lsoda,OK,0.031,0.464709758777126,1.05113613406635,2,"{""t_end"":10,""rtol"":1e-06,""atol"":1e-08,""e"":0.9,""h0"":10,""v0"":0}",76.41
+R,HYBRID,hybrid_bounce,deSolve,lsoda,OK,0.03,0.464709758777126,1.05113613406635,2,"{""t_end"":10,""rtol"":1e-06,""atol"":1e-08,""e"":0.9,""h0"":10,""v0"":0}",74.67
+R,HYBRID,hybrid_bounce,deSolve,lsoda,OK,0.03,0.464709758777126,1.05113613406635,2,"{""t_end"":10,""rtol"":1e-06,""atol"":1e-08,""e"":0.9,""h0"":10,""v0"":0}",78.19
+R,HYBRID,hybrid_bounce,deSolve,lsoda,OK,0.029,0.464709758777126,1.05113613406635,2,"{""t_end"":10,""rtol"":1e-06,""atol"":1e-08,""e"":0.9,""h0"":10,""v0"":0}",78.55
+R,HYBRID,hybrid_bounce,deSolve,lsoda,OK,0.03,0.46470975877778,1.05113613406004,2,"{""t_end"":10,""rtol"":1e-09,""atol"":1e-11,""e"":0.9,""h0"":10,""v0"":0}",79.52
+R,HYBRID,hybrid_bounce,deSolve,lsoda,OK,0.03,0.46470975877778,1.05113613406004,2,"{""t_end"":10,""rtol"":1e-09,""atol"":1e-11,""e"":0.9,""h0"":10,""v0"":0}",79.91
+R,HYBRID,hybrid_bounce,deSolve,lsoda,OK,0.03,0.46470975877778,1.05113613406004,2,"{""t_end"":10,""rtol"":1e-09,""atol"":1e-11,""e"":0.9,""h0"":10,""v0"":0}",75.77
+R,HYBRID,hybrid_bounce,deSolve,lsoda,OK,0.029,0.46470975877778,1.05113613406004,2,"{""t_end"":10,""rtol"":1e-09,""atol"":1e-11,""e"":0.9,""h0"":10,""v0"":0}",78.5
+R,HYBRID,hybrid_bounce,deSolve,lsoda,OK,0.031,0.46470975877778,1.05113613406004,2,"{""t_end"":10,""rtol"":1e-09,""atol"":1e-11,""e"":0.9,""h0"":10,""v0"":0}",74.53

@@ -1,0 +1,15 @@
+family,benchmark_id,title,baseline_params_json,scale_param,scale_values,ref_solution
+DES,des_mm1,M/M/1 queue,"{""lambda"":0.9,""mu"":1.0,""horizon"":100000,""replications"":20}",rho,"[0.5,0.7,0.85,0.95,0.99]",analytic steady-state & Little/Laws
+DES,des_mmc,M/M/c queue,"{""lambda"":4.5,""mu"":1.0,""c"":5,""horizon"":100000,""replications"":20}",c,"[1,2,4,8]",analytic steady-state (Erlang-C)
+DES,des_bcmp_closed,Closed BCMP-style network,"{""K"":10,""M"":3,""mu"":[1.0,1.0,1.0],""routing"":""fixed"",""horizon"":100000,""replications"":20}",K,"[10,30,60,120]",product-form (approx validations)
+DES,des_clinic,Clinic flow (triage→doctor→lab→doctor),"{""triage_mu"":8.0,""doctors"":2,""doctor_mu"":5.0,""lab_mu"":6.0,""routing"":""fixed"",""horizon"":28800,""replications"":20}",arrival_rate,"[0.5,0.8,1.0,1.2] x baseline",DES reference run (long horizon)
+DES,des_mg1_vac,M/G/1 with server vacations (optional),"{""lambda"":0.8,""service"":""lognormal(mu=1.0,sigma=0.5)"",""vacation"":""exp(mean=0.2)"",""horizon"":100000,""replications"":20}",SCV_service,"[0.25,1.0,2.0]",theoretical where available + DES reference
+STOCH,st_birth_death,Birth–death CRN,"{""birth"":10.0,""death"":10.0,""X0"":30,""t_end"":50.0}",t_end,"[50,100,200]",moment equations
+STOCH,st_dimerization,Dimerization (2A→B),"{""c1"":0.001,""c2"":0.1,""A0"":400,""B0"":0,""t_end"":50.0}",A0,"[200,400,800,1600]",tau-leap vs SSA consistency
+STOCH,st_rare_event,Rare-event regime (absorbing threshold),"{""birth"":5.0,""death"":6.0,""X0"":40,""threshold"":5,""t_end"":200.0}",threshold,"[10,8,6,5]",hitting-time estimates
+ODE,ode_lv,Lotka–Volterra (non-stiff),"{""alpha"":2.0,""beta"":1.0,""delta"":1.0,""gamma"":1.0,""x0"":10.0,""y0"":5.0,""t_end"":30.0}",t_end,"[30,60,120]",high-accuracy DOP853/ode113
+ODE,ode_robertson,Robertson (stiff),"{""y0"":[1.0,0.0,0.0],""t_end"":1e5}",t_end,"[1e3,1e4,1e5]",BDF/ode15s tight tolerances
+ODE,ode_lorenz96,Lorenz-96 (dim=20),"{""F"":8.0,""dim"":20,""y0"":""random_seeded"",""t_end"":30.0}",dim,"[10,20,40,80]",tight integrator reference
+HYBRID,hyb_thermostat,Thermostat (on/off with hysteresis),"{""T_on"":19.0,""T_off"":21.0,""ambient"":20.0,""k"":0.1,""t_end"":3600.0}",t_end,"[3600,7200,14400]",event-timed ODE reference
+HYBRID,hyb_bouncing_ball,Bouncing ball (restitution e=0.9),"{""g"":9.81,""e"":0.9,""y0"":1.0,""v0"":0.0,""t_end"":10.0}",e,"[0.5,0.7,0.9,0.99]",closed-form event times
+HYBRID,hyb_pid_limiter,CPS with PID + saturation,"{""plant"":""1/(s*(s+1))"",""pid"":""kp=2,ki=1,kd=0.1"",""sat"":[-1,1],""t_end"":30.0}",sat_limits,"[±0.5, ±1, ±2]",high-res hybrid reference
