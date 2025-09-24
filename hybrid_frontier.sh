@@ -6,14 +6,14 @@ r=$r; print(r*0.01)
 PY
 )
   for rep in $(seq 1 "$REPS_MORE"); do
-    python run_with_time.py --out results_hybrid_bounce_python.csv -- \
+    python run_with_time.py --out results/results_hybrid_bounce_python.csv -- \
       python python/hybrid_bounce.py --t_end 10 --rtol "$r" --atol "$a" \
-        --out results_hybrid_bounce_python.csv --ref ref_bounce.csv
+        --out results/results_hybrid_bounce_python.csv --ref ref_bounce.csv
 
-    python run_with_time.py --out results_hybrid_bounce_R.csv -- \
-      Rscript R/hybrid_bounce.R 10 "$r" "$a" 0.9 10 0 results_hybrid_bounce_R.csv ref_bounce.csv
+    python run_with_time.py --out results/results_hybrid_bounce_R.csv -- \
+      Rscript R/hybrid_bounce.R 10 "$r" "$a" 0.9 10 0 results/results_hybrid_bounce_R.csv ref_bounce.csv
 
-    python run_with_time.py --out results_hybrid_bounce_matlab.csv -- \
-      matlab -batch "addpath('/Users/tree/Simu/matlab');hybrid_bounce(10,$r,$a,0.9,10,0,'results_hybrid_bounce_matlab.csv','/Users/tree/Simu/ref_bounce.csv')"
+    python run_with_time.py --out results/results_hybrid_bounce_matlab.csv -- \
+      matlab -batch "addpath('/Users/tree/Simu/matlab');hybrid_bounce(10,$r,$a,0.9,10,0,'results/results_hybrid_bounce_matlab.csv','/Users/tree/Simu/ref_bounce.csv')"
   done
 done

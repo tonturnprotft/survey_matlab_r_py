@@ -12,15 +12,15 @@ REF="${REF:-$ROOT/ref_robertson_t1e5.csv}"
 
 for T in "${T_LIST[@]}"; do
   for rep in $(seq 1 "$REPS_MORE"); do
-    python run_with_time.py --out results_ode_robertson_python.csv -- \
+    python run_with_time.py --out results/results_ode_robertson_python.csv -- \
       python python/ode_robertson.py --t_end "$T" --rtol "$RTOL" --atol "$ATOL" --method BDF \
-        --out results_ode_robertson_python.csv --ref "$REF"
+        --out results/results_ode_robertson_python.csv --ref "$REF"
 
-    python run_with_time.py --out results_ode_robertson_R.csv -- \
-      Rscript R/ode_robertson.R "$T" "$RTOL" "$ATOL" lsoda results_ode_robertson_R.csv "$REF"
+    python run_with_time.py --out results/results_ode_robertson_R.csv -- \
+      Rscript R/ode_robertson.R "$T" "$RTOL" "$ATOL" lsoda results/results_ode_robertson_R.csv "$REF"
 
-    python run_with_time.py --out results_ode_robertson_matlab.csv -- \
-      matlab -batch "addpath('$MATLAB_PATH'); ode_robertson($T,$RTOL,$ATOL,'ode15s','results_ode_robertson_matlab.csv','$REF')"
+    python run_with_time.py --out results/results_ode_robertson_matlab.csv -- \
+      matlab -batch "addpath('$MATLAB_PATH'); ode_robertson($T,$RTOL,$ATOL,'ode15s','/Users/tree/Simu/results_ode_robertson_matlab.csv','$REF')"
   done
 done
 echo "[OK] ODE scalability extra reps complete."
